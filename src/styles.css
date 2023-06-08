@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+    background: #efefef80;
+}
+.card_shadaw {
+    background: #fff;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+}
+.thSTyle th{
+    background: #000000 !important;
+    color: #fff !important;
+    border: none !important;
+}
+
+.ngx-pagination .current{
+    background: #000000 !important;
+}

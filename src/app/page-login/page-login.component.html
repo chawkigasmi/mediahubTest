@@ -1,0 +1,34 @@
+<div class="page">
+  <!-- Main content section -->
+  <main class="main page__main">
+    <!-- Login form -->
+    <form class="login-form main__login-form" [formGroup]="loginForm" (ngSubmit)="onLogin()">
+      <!-- Title -->
+      <h3 class="login-form__title">Sign In</h3>
+
+      <!-- Username input field -->
+      <label class="login-form__label" for="uname">
+        <span class="sr-only">Username</span>
+        <input class="login-form__input" id="uname" type="text" formControlName="username" placeholder="Username" required="required" />
+        <div class="error-message" *ngIf="loginForm.get('username')?.invalid && (loginForm.get('username')?.dirty || loginForm.get('username')?.touched)">
+          <div *ngIf="loginForm.get('username')?.errors">Le nom d'utilisateur est requis.</div>
+        </div>
+      </label>
+
+      <!-- Password input field -->
+      <label class="login-form__label" for="psw">
+        <span class="sr-only">Password</span>
+        <input class="login-form__input" id="psw" type="password" formControlName="password" placeholder="Password" required="required" />
+        <div class="error-message" *ngIf="loginForm.get('password')?.invalid && (loginForm.get('password')?.dirty || loginForm.get('password')?.touched)">
+          <div *ngIf="loginForm.get('password')?.errors?.required">Le mot de passe est requis.</div>
+        </div>
+      </label>
+
+      <!-- Login button -->
+      <button [disabled]="isLoading" class=" login_btn" type="submit">Login</button>
+
+      <!-- Error message -->
+      <div class="error-message" *ngIf="errorMessage">{{ errorMessage }}</div>
+    </form>
+  </main>
+</div>

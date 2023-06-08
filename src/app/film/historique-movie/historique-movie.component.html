@@ -1,0 +1,40 @@
+   <!-- Menu -->
+<app-nav-bar-film></app-nav-bar-film>
+<div class="container mt-3">
+    <!-- Heading -->
+    <h2 class="">Viewed movie history</h2>
+  
+    <!-- Table container -->
+    <div class="table-responsive card_shadaw mt-3 mb-4">
+      <!-- Table element -->
+      <table class="table table-bordered table-hover">
+        <thead>
+          <tr class="thSTyle">
+            <!-- Column headers with sorting functionality -->
+            <th>Title</th>
+            <th>Director</th>
+            <th>Distributor</th>
+            <th>Source</th>
+          </tr>
+        </thead>
+        <tbody>
+            <!-- Table rows generated using ngFor directive -->
+            <ng-container *ngIf="uniqueMovies.length > 0; else noHistories">
+              <tr *ngFor="let item of uniqueMovies">
+                <!-- Displaying movie data in table cells -->
+                <td>{{ item?.title }}</td>
+                <td>{{ item?.Director }}</td>
+                <td>{{ item?.Distributor }}</td>
+                <td>{{ item?.Source }}</td>
+              </tr>
+            </ng-container>
+            <ng-template #noHistories>
+              <tr>
+                <td colspan="4">There are no histories</td>
+              </tr>
+            </ng-template>
+          </tbody>
+          
+      </table>
+    </div>
+  </div>

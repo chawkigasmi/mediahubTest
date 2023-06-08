@@ -1,0 +1,78 @@
+   <!-- Menu -->
+<app-nav-bar-film></app-nav-bar-film>
+<div class="container containerDetail mt-3">
+    <!-- Button to return to the list of all movies -->
+    <button class="retour_btn" (click)="retourList()">Back to all movies</button>
+    
+    <!-- Heading for the movie details section -->
+    <h2>Detail movies</h2>
+    
+    <!-- Card container for the movie details -->
+    <div class="card card_shadaw">
+        <div class="card-body row">
+            <!-- Movie property: Title -->
+            <div class="col-md-5 boldS">Title: </div>
+            <div class="col-md-7">{{ movie?.Title }}</div>
+            
+            <!-- Movie property: US Gross -->
+          <div class="col-md-5 boldS">US Gross: </div>
+            <div class="col-md-7">{{ movie && movie['US Gross'] ? movie['US Gross'] : '-' }}</div>
+             
+            <!-- Movie property: Worldwide Gross -->
+            <div class="col-md-5 boldS">Worldwide Gross:</div>
+            <div class="col-md-7">   {{ movie && movie['Worldwide Gross'] ? movie['Worldwide Gross'] : '-' }} </div>
+            
+            <!-- Movie property: US DVD Sales -->
+            <div class="col-md-5 boldS">US DVD Sales:</div>
+            <div class="col-md-7"> {{ movie && movie['US DVD Sales'] ? movie['US DVD Sales'] : '-' }}</div>
+            
+            <!-- Movie property: Production Budget -->
+            <div class="col-md-5 boldS">Production Budget:</div>
+            <div class="col-md-7"> {{ movie && movie['Production Budget'] ? movie['Production Budget'] : '-' }}</div>
+            
+            <!-- Movie property: Release Date -->
+            <div class="col-md-5 boldS">Release Date:</div>
+            <div class="col-md-7"> {{ movie && movie['Release Date'] ? movie['Release Date'] : '-' }}</div>
+            
+            <!-- Movie property: MPAA Rating -->
+            <div class="col-md-5 boldS">MPAA Rating:</div>
+            <div class="col-md-7"> {{ movie && movie['MPAA Rating'] ? movie['MPAA Rating'] : '-' }}</div>
+            
+            <!-- Movie property: Running Time min -->
+            <div class="col-md-5 boldS">Running Time min:</div>
+            <div class="col-md-7"> {{ movie && movie['Running Time min'] ? movie['Running Time min'] : '-' }}</div>
+            
+            <!-- Movie property: Distributor -->
+            <div class="col-md-5 boldS">Distributor:</div>
+            <div class="col-md-7"> {{ movie && movie['Distributor'] ? movie['Distributor'] : '-' }}</div>
+            
+            <!-- Movie property: Source -->
+            <div class="col-md-5 boldS">Source:</div>
+            <div class="col-md-7"> {{ movie && movie['Source'] ? movie['Source'] : '-' }}</div>
+            
+            <!-- Movie property: Major Genre -->
+            <div class="col-md-5 boldS">Major Genre:</div>
+            <div class="col-md-7"> {{ movie && movie['Major Genre'] ? movie['Major Genre'] : '-' }}</div>
+            
+            <!-- Movie property: Creative Type -->
+            <div class="col-md-5 boldS">Creative Type:</div>
+            <div class="col-md-7" > {{ movie && movie['Creative Type'] ? movie['Creative Type'] : '-' }}</div>
+            
+            <!-- Movie property: Director -->
+            <div class="col-md-5 boldS">Director:</div>
+            <div class="col-md-7"> {{ movie && movie['Director'] ? movie['Director'] : '-' }}</div>
+            
+            <!-- Movie property: Rotten Tomatoes Rating -->
+            <div class="col-md-5 boldS">Rotten Tomatoes Rating:</div>
+            <div class="col-md-7">{{ movie && movie['Rotten Tomatoes Rating'] ? movie['Rotten Tomatoes Rating'] : '-' }}</div>
+            
+            <!-- Movie property: IMDB Rating -->
+            <div class="col-md-5 boldS">IMDB Rating:</div>
+            <div class="col-md-7">{{ movie && movie['IMDB Rating'] ? movie['IMDB Rating'] : '-' }}</div>
+            
+            <!-- Movie property: IMDB Votes -->
+            <div class="col-md-5 boldS">IMDB Votes:</div>
+            <div class="col-md-7"> {{ movie && movie['IMDB Votes'] ? movie['IMDB Votes'] : '-' }}</div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,27 @@
+.nav_bar{
+    height: 60px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.titleCanal{
+    color: #fff;
+    padding: 11px 15px;
+    font-size: 19px;
+    display: inline-block;
+}
+.navbar_list{
+    color: #010101;
+    padding: 11px 20px;
+    font-size: 19px;
+    float: right;
+    cursor: pointer;
+    text-decoration: none;
+}
+.active{
+    color: #fff;
+    background: black;
+    padding: 4px 11px;
+    position: relative;
+    top: 8px;
+    border-radius: 4px;
+}

@@ -1,0 +1,69 @@
+   <!-- Menu -->
+ <app-nav-bar-film></app-nav-bar-film>
+ <div class="container mt-3">
+  <!-- Search button -->
+  <button class="btn_search" (click)="searchBtn()">Search</button>
+
+  <!-- Search input field -->
+  <input class="searchInput" type="text" [(ngModel)]="searchText" (keyup)="onKeyUp($event)" placeholder="Search">
+
+  <!-- Heading -->
+  <h2 class="">List all movies</h2>
+
+  <!-- Table container -->
+  <div class="table-responsive card_shadaw mt-4 mb-4">
+    <!-- Table element -->
+    <table class="table table-bordered table-hover">
+      <thead>
+        <tr class="thSTyle">
+          <!-- Column headers with sorting functionality -->
+          <th (click)="sort('Title')">Title
+            <span class="fas" [ngClass]="getSortIcon('Title')"></span>
+          </th>
+          <th  (click)="sort('Director')">Director
+          </th>
+          <th (click)="sort('Rotten Tomatoes Rating')">Rotten Tomatoes Rating
+            <span class="fas" [ngClass]="getSortIcon('Rotten Tomatoes Rating')"></span>
+          </th>
+          <th (click)="sort('IMDB Rating')">IMDB Rating
+            <span class="fas" [ngClass]="getSortIcon('IMDB Rating')"></span>
+          </th>
+          <th (click)="sort('IMDB Votes')">IMDB Votes
+            <span class="fas" [ngClass]="getSortIcon('IMDB Votes')"></span>
+          </th> 
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Table rows generated using ngFor directive -->
+        <tr *ngFor="let item of list_movies | paginate: { itemsPerPage: pageSize, currentPage: currentPage, totalItems: totalItems }" (click)="getDetailMovie(item)">
+          <!-- Displaying movie data in table cells -->
+          <td>{{ item?.Title }}</td>
+          <td>{{item?.Director}}</td>
+          <td>{{ item['Rotten Tomatoes Rating'] ? item['Rotten Tomatoes Rating'] : '-' }}</td>
+          <td>{{ item['IMDB Rating'] ? item['IMDB Rating'] : '-' }}</td>
+          <td>{{ item['IMDB Votes'] ? item['IMDB Votes'] : '-' }}</td> 
+        </tr>
+
+      </tbody>
+      <tbody>
+        <tr *ngIf="!hasResults && !showSpinner ">
+          <td colspan="5">
+            No result
+          </td>
+        </tr>
+
+      </tbody>
+       <tbody *ngIf="showSpinner ">
+        <tr >
+          <td colspan="5">
+            <div class="spinner-border" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+          </td>
+        </tr>
+      </tbody> 
+    </table>
+    <pagination-controls *ngIf="list_movies"  (pageChange)="currentPage = $event"></pagination-controls>
+
+  </div>
+</div>

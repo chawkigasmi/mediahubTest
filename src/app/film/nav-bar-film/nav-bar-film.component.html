@@ -1,0 +1,17 @@
+<div class="nav_bar">
+    <!-- Navigation bar -->
+    <div class="titleCanal">
+        <img src="assets/img/Canal-Logo.jpg" width="70">
+    </div>
+    
+    <!-- Log out button -->
+    <a class="navbar_list" (click)="logOut()">Log out</a>
+
+    <!-- Movie History button -->
+    <a class="navbar_list" (click)="historqueVisit()" routerLink="/historique-film" routerLinkActive="active" [ngClass]="{ active: isActiveRoute('/historique-film') }">Movie History</a>
+
+    <!-- All movies button -->
+    <a class="navbar_list" routerLink="/list-film" routerLinkActive="active" [ngClass]="{ active: isActiveRoute('/list-film') }">All movies</a>
+
+  </div>
+  

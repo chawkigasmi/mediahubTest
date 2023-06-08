@@ -1,0 +1,65 @@
+body {
+    padding: 20px;
+  }
+  
+  table {
+    text-align: center;
+  }
+  
+  .cancelled {
+    color: red;
+    font-weight: bold;
+  }
+  @media (max-width: 575px) {
+    table thead {
+      display: none;
+    }
+  
+    table tr {
+      display: flex;
+      flex-direction: column;
+      border: 3px solid white;
+      padding: 1px;
+    }
+  
+    table td[data-label] {
+      display: flex;
+      font-weight: bold;
+    }
+  
+    table td[data-label]::before {
+      content: attr(data-label);
+      color: lightgrey;
+      font-weight: 100;
+      width: 50%;
+    }
+  }
+  .searchInput{
+    float: right;
+    margin-top: 6px;
+    border: 1px solid #d0c3c363;
+    border-radius: 3px;
+    padding: 6px 9px;
+    z-index: 10;
+  }
+  h2{
+    position: relative;
+    top: 7px;
+    z-index: -1;
+  }
+  .btn_search{
+    float: right;
+    padding: 7px 8px;
+    margin-top: 6px;
+    background: #000000;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    border-radius: 2px;
+  }
+  td{
+    cursor: pointer;
+  }
+.fas{
+    cursor: pointer;
+}
